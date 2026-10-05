@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElevateTech | Ergonomische Laptop Stands & Bureau Tech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#e0f0ff',
+              500: '#0066ff',
+              600: '#0052cc',
+              700: '#003d99',
+              dark: '#0b0f19',
+              card: '#131b2e',
+              surface: '#1c2640'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+    }
+    .glow-effect {
+      box-shadow: 0 0 40px -10px rgba(0, 102, 255, 0.35);
+    }
+    .glow-subtle {
+      box-shadow: 0 0 20px -5px rgba(0, 102, 255, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 50%, #0066ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-gradient {
+      background: radial-gradient(circle at 50% 20%, rgba(0, 102, 255, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-brand-600 text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
+    <i data-lucide="truck" class="w-4 h-4"></i>
+    <span><strong>GRATIS verzending</strong> via PostNL Brievenbuspakje op alle orders &gt; €25! Vandaag besteld = morgen in huis.</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-40 bg-brand-dark/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="scrollToTop()">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/20">
+          E
+        </div>
+        <span class="font-display font-bold text-xl tracking-tight text-white">ELEVATE<span class="text-brand-500">TECH</span></span>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#product-hero" class="hover:text-brand-500 transition-colors">Vlaggenschip</a>
+        <a href="#features" class="hover:text-brand-500 transition-colors">Voordelen</a>
+        <a href="#accessories" class="hover:text-brand-500 transition-colors">Accessoires</a>
+        <a href="#reviews" class="hover:text-brand-500 transition-colors">Reviews (4.9/5)</a>
+        <a href="#faq" class="hover:text-brand-500 transition-colors">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button onclick="toggleCart()" class="relative p-2.5 bg-brand-card hover:bg-brand-surface rounded-xl border border-slate-700 transition-all text-slate-200">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-brand-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-dark">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION / MAIN PRODUCT -->
+  <section id="product-hero" class="relative pt-12 pb-20 overflow-hidden hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Product Images Gallery -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="relative bg-brand-card border border-slate-800 rounded-3xl overflow-hidden group glow-effect">
+            <span class="absolute top-4 left-4 bg-brand-500 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 flex items-center gap-1 shadow-md">
+              <i data-lucide="zap" class="w-3.5 h-3.5"></i> Bestseller No. 1
+            </span>
+            <img id="main-product-img" src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=1200&q=80" alt="Aluminium Laptophouder Ergonomisch" class="w-full h-[420px] sm:h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-500">
+          </div>
+          
+          <!-- Thumbnail Bar -->
+          <div class="grid grid-cols-4 gap-3">
+            <button onclick="changeHeroImage('https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=1200&q=80')" class="border-2 border-brand-500 rounded-xl overflow-hidden h-20 bg-brand-card">
+              <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
+            </button>
+            <button onclick="changeHeroImage('https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=1200&q=80')" class="border border-slate-800 rounded-xl overflow-hidden h-20 bg-brand-card hover:border-slate-600">
+              <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
+            </button>
+            <button onclick="changeHeroImage('https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1200&q=80')" class="border border-slate-800 rounded-xl overflow-hidden h-20 bg-brand-card hover:border-slate-600">
+              <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
+            </button>
+            <button onclick="changeHeroImage('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1200&q=80')" class="border border-slate-800 rounded-xl overflow-hidden h-20 bg-brand-card hover:border-slate-600">
+              <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Purchase Card -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold">
+              <div class="flex">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-4Ik ga een strakke, moderne en conversiegerichte "Tech & Productivity" webshop voor je bouwen, genaamd **NEXUS Ergonomics**. 
+
+De webshop wordt volledig afgestemd op de verkoop van de **Aluminium Opvouwbare Laptophouder** en bevat:
+- **High-tech Dark Mode Design**: Met opvallende neon-accenten, strakke typografie en professionele productfotografie.
+- **Hero-Sectie met Directe CTA**: Duidelijke waardepropositie (ergonomisch, brievenbuspost, 100% aluminium).
+- **Interactieve 3D/Feature Highlights**: Visuele uitleg van de pluspunten (warmteafvoer, 6-standen verstelbaar, antislip silicone).
+- **Interactieve Winkelmand met Bundelkorting**: Voeg de laptophouder toe en zie direct de gratis verzendingsindicator en optionele accessoires (zoals kabelorganizers of opberg-etuis).
+- **Klantbeoordelingen & FAQ**: Inclusief reviews met sterren en antwoorden op veelgestelde vragen om vertrouwen te bouwen.
+- **Checkout Simulator**: Met iDEAL, Creditcard en Apple Pay ondersteuning inclusief orderbevestiging.
+
+Ik ga de code nu voor je genereren:
+
+index.html [generated with web_code_canvas tool]
+
+De webshop voor **NEXUS Ergonomics** is nu volledig live in de preview editor!
+
+### Belangrijkste kenmerken van deze webshop:
+
+1. **Focus op 1 Hero Product**: Alles op de pagina stelt de **UltraSlim Aluminium Laptophouder** centraal, wat zorgt voor de hoogst mogelijke conversie.
+2. **Kleurvarianten & Bundelkorting**: Bezoekers kunnen kiezen uit Space Gray, Zilver en Matte Black, en worden getriggerd om 2 stuks te kopen met **15% extra korting** (ideaal voor thuis én kantoor).
+3. **Conversie-boosters**:
+   - **Brievenbuspost badge**: Benadrukt direct *"Past door de brievenbus - Je hoeft niet thuis te blijven!"*
+   - **Voorraad/Timer-indicator**: Subtiele schaarste-melding *"Nog 8 stuks op voorraad"*.
+   - **Interactieve Winkelmand**: Inclusief vooruitgangsbalk voor gratis verzending.
+   - **Social Proof**: 4.9/5 sterren beoordeling met foto-reviews en veelgestelde vragen.
+4. **Volledig checkout-systeem**: Inclusief iDEAL, Apple Pay en Creditcard simulators met instant orderbevestiging.
